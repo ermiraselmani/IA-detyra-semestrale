@@ -1,0 +1,120 @@
+flowchart TD
+  classDef expanded fill:#ffffff,stroke:#555,color:#000
+  classDef path fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px,color:#000
+  classDef goal fill:#ffd54f,stroke:#f57f17,stroke-width:3px,color:#000
+  classDef invalid fill:#ef9a9a,stroke:#c62828,color:#000
+  classDef repeated fill:#e0e0e0,stroke:#9e9e9e,color:#000
+  classDef deadend fill:#f8bbd0,stroke:#ad1457,color:#000
+  classDef frontier fill:#bbdefb,stroke:#1565c0,color:#000
+  n0["[0] orar bosh"]:::path
+  n1["[1] J1: D"]:::path
+  n0 -->|"J1Hën=D"| n1
+  n2["[2] J1: DD"]:::path
+  n1 -->|"J1Mar=D"| n2
+  n3["[3] J1: DDD"]:::path
+  n2 -->|"J1Mër=D"| n3
+  n4["[4] J1: DDDD"]:::path
+  n3 -->|"J1Enj=D"| n4
+  n5["[5] J1: DDDDD"]:::path
+  n4 -->|"J1Pre=D"| n5
+  x5["✗ prerë: J1Sht=D, J1Sht=N"]:::invalid
+  n5 -.-> x5
+  n8["[8] J1: DDDDD-"]:::path
+  n5 -->|"J1Sht=-"| n8
+  n9["[9] J1: DDDDD-D"]:::path
+  n8 -->|"J1Die=D"| n9
+  x9["✗ prerë: J2Hën=D"]:::invalid
+  n9 -.-> x9
+  n11["[11] J2: N"]:::path
+  n9 -->|"J2Hën=N"| n11
+  x11["✗ prerë: J2Mar=D"]:::invalid
+  n11 -.-> x11
+  n13["[13] J2: NN"]:::path
+  n11 -->|"J2Mar=N"| n13
+  x13["✗ prerë: J2Mër=D"]:::invalid
+  n13 -.-> x13
+  n15["[15] J2: NNN"]:::path
+  n13 -->|"J2Mër=N"| n15
+  x15["✗ prerë: J2Enj=D, J2Enj=N"]:::invalid
+  n15 -.-> x15
+  n18["[18] J2: NNN-"]:::path
+  n15 -->|"J2Enj=-"| n18
+  x18["✗ prerë: J2Pre=D"]:::invalid
+  n18 -.-> x18
+  n20["[20] J2: NNN-N ⊘"]:::deadend
+  n18 -->|"J2Pre=N"| n20
+  x20["✗ prerë: J2Sht=D, J2Sht=-"]:::invalid
+  n20 -.-> x20
+  n22["[22] J2: NNN-NN ⊘"]:::deadend
+  n20 -->|"J2Sht=N"| n22
+  x22["✗ prerë: J2Die=D"]:::invalid
+  n22 -.-> x22
+  n24["[24] J2: NNN-NNN ⊘"]:::deadend
+  n22 -->|"J2Die=N"| n24
+  x24["✗ prerë: J3Hën=D, J3Hën=N"]:::invalid
+  n24 -.-> x24
+  n27["[27] J3: - ⊘"]:::deadend
+  n24 -->|"J3Hën=-"| n27
+  x27["✗ prerë: J3Mar=D, J3Mar=N"]:::invalid
+  n27 -.-> x27
+  n30["[30] J3: -- ⊘"]:::deadend
+  n27 -->|"J3Mar=-"| n30
+  x30["✗ prerë: J3Mër=D, J3Mër=N"]:::invalid
+  n30 -.-> x30
+  n33["[33] J3: --- ⊘"]:::deadend
+  n30 -->|"J3Mër=-"| n33
+  x33["✗ prerë: J3Enj=D, J3Enj=-"]:::invalid
+  n33 -.-> x33
+  n35["[35] J3: ---N ⊘"]:::deadend
+  n33 -->|"J3Enj=N"| n35
+  x35["✗ prerë: J3Pre=D, J3Pre=N, J3Pre=-"]:::invalid
+  n35 -.-> x35
+  n40["[40] J2: NNN-NN- ⊘"]:::deadend
+  n22 -->|"J2Die=-"| n40
+  x40["✗ prerë: J3Hën=D, J3Hën=N"]:::invalid
+  n40 -.-> x40
+  n43["[43] J3: - ⊘"]:::deadend
+  n40 -->|"J3Hën=-"| n43
+  x43["✗ prerë: J3Mar=D, J3Mar=N"]:::invalid
+  n43 -.-> x43
+  n46["[46] J3: -- ⊘"]:::deadend
+  n43 -->|"J3Mar=-"| n46
+  x46["✗ prerë: J3Mër=D, J3Mër=N, J3Mër=-"]:::invalid
+  n46 -.-> x46
+  n51["[51] J2: NNN--"]:::path
+  n18 -->|"J2Pre=-"| n51
+  n52["[52] J2: NNN--D"]:::path
+  n51 -->|"J2Sht=D"| n52
+  x52["✗ prerë: J2Die=D"]:::invalid
+  n52 -.-> x52
+  n54["[54] J2: NNN--DN"]:::path
+  n52 -->|"J2Die=N"| n54
+  x54["✗ prerë: J3Hën=D, J3Hën=N"]:::invalid
+  n54 -.-> x54
+  n57["[57] J3: -"]:::path
+  n54 -->|"J3Hën=-"| n57
+  x57["✗ prerë: J3Mar=D, J3Mar=N"]:::invalid
+  n57 -.-> x57
+  n60["[60] J3: --"]:::path
+  n57 -->|"J3Mar=-"| n60
+  x60["✗ prerë: J3Mër=D, J3Mër=N"]:::invalid
+  n60 -.-> x60
+  n63["[63] J3: ---"]:::path
+  n60 -->|"J3Mër=-"| n63
+  x63["✗ prerë: J3Enj=D"]:::invalid
+  n63 -.-> x63
+  n65["[65] J3: ---N"]:::path
+  n63 -->|"J3Enj=N"| n65
+  x65["✗ prerë: J3Pre=D"]:::invalid
+  n65 -.-> x65
+  n67["[67] J3: ---NN"]:::path
+  n65 -->|"J3Pre=N"| n67
+  x67["✗ prerë: J3Sht=D"]:::invalid
+  n67 -.-> x67
+  n69["[69] J3: ---NNN"]:::path
+  n67 -->|"J3Sht=N"| n69
+  x69["✗ prerë: J3Die=D, J3Die=N"]:::invalid
+  n69 -.-> x69
+  n72["[72] J3: ---NNN- ★ GOAL"]:::goal
+  n69 -->|"J3Die=-"| n72
+  linkStyle 0,1,2,3,4,6,7,9,11,13,15,37,38,40,42,44,46,48,50,52,54 stroke:#2e7d32,stroke-width:3px

@@ -1,0 +1,102 @@
+flowchart TD
+  classDef expanded fill:#ffffff,stroke:#555,color:#000
+  classDef path fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px,color:#000
+  classDef goal fill:#ffd54f,stroke:#f57f17,stroke-width:3px,color:#000
+  classDef invalid fill:#ef9a9a,stroke:#c62828,color:#000
+  classDef repeated fill:#e0e0e0,stroke:#9e9e9e,color:#000
+  classDef deadend fill:#f8bbd0,stroke:#ad1457,color:#000
+  classDef frontier fill:#bbdefb,stroke:#1565c0,color:#000
+  n0["[0] 3M3C B~~~  0M0C"]:::path
+  n1["[1] 2M3C  ~~~B 1M0C ✗"]:::invalid
+  n0 -->|"1M→"| n1
+  n2["[2] 1M3C  ~~~B 2M0C ✗"]:::invalid
+  n0 -->|"2M→"| n2
+  n3["[3] 3M2C  ~~~B 0M1C ⊘"]:::deadend
+  n0 -->|"1C→"| n3
+  n6["[6] 3M3C B~~~  0M0C ↺"]:::repeated
+  n3 -->|"1C←"| n6
+  n4["[4] 3M1C  ~~~B 0M2C"]:::path
+  n0 -->|"2C→"| n4
+  n7["[7] 3M2C B~~~  0M1C"]:::path
+  n4 -->|"1C←"| n7
+  n12["[12] 2M2C  ~~~B 1M1C ↺"]:::repeated
+  n7 -->|"1M→"| n12
+  n13["[13] 1M2C  ~~~B 2M1C ✗"]:::invalid
+  n7 -->|"2M→"| n13
+  n14["[14] 3M1C  ~~~B 0M2C ↺"]:::repeated
+  n7 -->|"1C→"| n14
+  n15["[15] 3M0C  ~~~B 0M3C"]:::path
+  n7 -->|"2C→"| n15
+  n17["[17] 3M1C B~~~  0M2C"]:::path
+  n15 -->|"1C←"| n17
+  n19["[19] 2M1C  ~~~B 1M2C ✗"]:::invalid
+  n17 -->|"1M→"| n19
+  n20["[20] 1M1C  ~~~B 2M2C"]:::path
+  n17 -->|"2M→"| n20
+  n23["[23] 2M1C B~~~  1M2C ✗"]:::invalid
+  n20 -->|"1M←"| n23
+  n24["[24] 3M1C B~~~  0M2C ↺"]:::repeated
+  n20 -->|"2M←"| n24
+  n25["[25] 1M2C B~~~  2M1C ✗"]:::invalid
+  n20 -->|"1C←"| n25
+  n26["[26] 1M3C B~~~  2M0C ✗"]:::invalid
+  n20 -->|"2C←"| n26
+  n27["[27] 2M2C B~~~  1M1C"]:::path
+  n20 -->|"1M1C←"| n27
+  n28["[28] 1M2C  ~~~B 2M1C ✗"]:::invalid
+  n27 -->|"1M→"| n28
+  n29["[29] 0M2C  ~~~B 3M1C"]:::path
+  n27 -->|"2M→"| n29
+  n33["[33] 1M2C B~~~  2M1C ✗"]:::invalid
+  n29 -->|"1M←"| n33
+  n34["[34] 2M2C B~~~  1M1C ↺"]:::repeated
+  n29 -->|"2M←"| n34
+  n35["[35] 0M3C B~~~  3M0C"]:::path
+  n29 -->|"1C←"| n35
+  n37["[37] 0M2C  ~~~B 3M1C ↺"]:::repeated
+  n35 -->|"1C→"| n37
+  n38["[38] 0M1C  ~~~B 3M2C"]:::path
+  n35 -->|"2C→"| n38
+  n39["[39] 1M1C B~~~  2M2C"]:::path
+  n38 -->|"1M←"| n39
+  n44["[44] 0M1C  ~~~B 3M2C ↺"]:::repeated
+  n39 -->|"1M→"| n44
+  n45["[45] 1M0C  ~~~B 2M3C ✗"]:::invalid
+  n39 -->|"1C→"| n45
+  n46["[46] 0M0C  ~~~B 3M3C ★ GOAL"]:::goal
+  n39 -->|"1M1C→"| n46
+  n40["[40] 2M1C B~~~  1M2C ✗"]:::invalid
+  n38 -->|"2M←"| n40
+  n41["[41] 0M2C B~~~  3M1C …"]:::frontier
+  n38 -->|"1C←"| n41
+  n42["[42] 0M3C B~~~  3M0C ↺"]:::repeated
+  n38 -->|"2C←"| n42
+  n43["[43] 1M2C B~~~  2M1C ✗"]:::invalid
+  n38 -->|"1M1C←"| n43
+  n36["[36] 1M3C B~~~  2M0C ✗"]:::invalid
+  n29 -->|"1M1C←"| n36
+  n30["[30] 2M1C  ~~~B 1M2C ✗"]:::invalid
+  n27 -->|"1C→"| n30
+  n31["[31] 2M0C  ~~~B 1M3C ✗"]:::invalid
+  n27 -->|"2C→"| n31
+  n32["[32] 1M1C  ~~~B 2M2C ↺"]:::repeated
+  n27 -->|"1M1C→"| n32
+  n21["[21] 3M0C  ~~~B 0M3C ↺"]:::repeated
+  n17 -->|"1C→"| n21
+  n22["[22] 2M0C  ~~~B 1M3C ✗"]:::invalid
+  n17 -->|"1M1C→"| n22
+  n18["[18] 3M2C B~~~  0M1C ↺"]:::repeated
+  n15 -->|"2C←"| n18
+  n16["[16] 2M1C  ~~~B 1M2C ✗"]:::invalid
+  n7 -->|"1M1C→"| n16
+  n8["[8] 3M3C B~~~  0M0C ↺"]:::repeated
+  n4 -->|"2C←"| n8
+  n5["[5] 2M2C  ~~~B 1M1C ⊘"]:::deadend
+  n0 -->|"1M1C→"| n5
+  n9["[9] 3M2C B~~~  0M1C ↺"]:::repeated
+  n5 -->|"1M←"| n9
+  n10["[10] 2M3C B~~~  1M0C ✗"]:::invalid
+  n5 -->|"1C←"| n10
+  n11["[11] 3M3C B~~~  0M0C ↺"]:::repeated
+  n5 -->|"1M1C←"| n11
+  linkStyle 4,5,9,10,12,17,19,22,24,25,28 stroke:#2e7d32,stroke-width:3px

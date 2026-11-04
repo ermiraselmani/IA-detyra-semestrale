@@ -1,0 +1,68 @@
+flowchart TD
+  classDef expanded fill:#ffffff,stroke:#555,color:#000
+  classDef path fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px,color:#000
+  classDef goal fill:#ffd54f,stroke:#f57f17,stroke-width:3px,color:#000
+  classDef invalid fill:#ef9a9a,stroke:#c62828,color:#000
+  classDef repeated fill:#e0e0e0,stroke:#9e9e9e,color:#000
+  classDef deadend fill:#f8bbd0,stroke:#ad1457,color:#000
+  classDef frontier fill:#bbdefb,stroke:#1565c0,color:#000
+  n0["[0] _23<br/>146<br/>758"]:::path
+  n1["[1] 123<br/>_46<br/>758"]:::path
+  n0 -->|"D"| n1
+  n3["[3] _23<br/>146<br/>758 ↺"]:::repeated
+  n1 -->|"U"| n3
+  n4["[4] 123<br/>746<br/>_58"]:::expanded
+  n1 -->|"D"| n4
+  n9["[9] 123<br/>_46<br/>758 ↺"]:::repeated
+  n4 -->|"U"| n9
+  n10["[10] 123<br/>746<br/>5_8"]:::expanded
+  n4 -->|"R"| n10
+  n21["[21] 123<br/>7_6<br/>548 …"]:::frontier
+  n10 -->|"U"| n21
+  n22["[22] 123<br/>746<br/>_58 ↺"]:::repeated
+  n10 -->|"L"| n22
+  n23["[23] 123<br/>746<br/>58_ …"]:::frontier
+  n10 -->|"R"| n23
+  n5["[5] 123<br/>4_6<br/>758"]:::path
+  n1 -->|"R"| n5
+  n11["[11] 1_3<br/>426<br/>758"]:::expanded
+  n5 -->|"U"| n11
+  n24["[24] 123<br/>4_6<br/>758 ↺"]:::repeated
+  n11 -->|"D"| n24
+  n25["[25] _13<br/>426<br/>758 …"]:::frontier
+  n11 -->|"L"| n25
+  n26["[26] 13_<br/>426<br/>758 …"]:::frontier
+  n11 -->|"R"| n26
+  n12["[12] 123<br/>456<br/>7_8"]:::path
+  n5 -->|"D"| n12
+  n27["[27] 123<br/>4_6<br/>758 ↺"]:::repeated
+  n12 -->|"U"| n27
+  n28["[28] 123<br/>456<br/>_78 …"]:::frontier
+  n12 -->|"L"| n28
+  n29["[29] 123<br/>456<br/>78_ ★ GOAL"]:::goal
+  n12 -->|"R"| n29
+  n13["[13] 123<br/>_46<br/>758 ↺"]:::repeated
+  n5 -->|"L"| n13
+  n14["[14] 123<br/>46_<br/>758 …"]:::frontier
+  n5 -->|"R"| n14
+  n2["[2] 2_3<br/>146<br/>758"]:::expanded
+  n0 -->|"R"| n2
+  n6["[6] 243<br/>1_6<br/>758"]:::expanded
+  n2 -->|"D"| n6
+  n15["[15] 2_3<br/>146<br/>758 ↺"]:::repeated
+  n6 -->|"U"| n15
+  n16["[16] 243<br/>156<br/>7_8 …"]:::frontier
+  n6 -->|"D"| n16
+  n17["[17] 243<br/>_16<br/>758 …"]:::frontier
+  n6 -->|"L"| n17
+  n18["[18] 243<br/>16_<br/>758 …"]:::frontier
+  n6 -->|"R"| n18
+  n7["[7] _23<br/>146<br/>758 ↺"]:::repeated
+  n2 -->|"L"| n7
+  n8["[8] 23_<br/>146<br/>758"]:::expanded
+  n2 -->|"R"| n8
+  n19["[19] 236<br/>14_<br/>758 …"]:::frontier
+  n8 -->|"D"| n19
+  n20["[20] 2_3<br/>146<br/>758 ↺"]:::repeated
+  n8 -->|"L"| n20
+  linkStyle 0,8,13,16 stroke:#2e7d32,stroke-width:3px
