@@ -1,1 +1,0 @@
-# IA-detyra-semestrale
