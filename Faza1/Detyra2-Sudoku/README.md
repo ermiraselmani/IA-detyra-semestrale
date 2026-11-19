@@ -2,7 +2,7 @@
 
 ## Ekzekutimi
 ```bash
-cd Detyra2-Sudoku
+cd Faza1/Detyra2-Sudoku
 dotnet run -c Release -- all        # zgjidh të tri nivelet: Easy, Medium, Hard
 dotnet run -c Release -- hard       # vetëm një nivel (easy | medium | hard)
 dotnet run -c Release -- 530070000600195000098000060800060003400803001700020006060000280000419005000080079

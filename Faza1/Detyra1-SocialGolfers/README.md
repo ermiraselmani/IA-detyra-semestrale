@@ -2,7 +2,7 @@
 
 ## Ekzekutimi
 ```bash
-cd Detyra1-SocialGolfers
+cd Faza1/Detyra1-SocialGolfers
 dotnet run -c Release -- [g] [p] [w] [timeoutSek]
 # default: 8 4 10 60  (32 lojtarë, grupe me 4, 10 javë, 60 sekonda)
 dotnet run -c Release -- 4 4 5      # 16 lojtarë, 5 javë -> zgjidhje e menjëhershme

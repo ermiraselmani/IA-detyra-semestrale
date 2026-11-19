@@ -2,7 +2,7 @@
 
 ## Ekzekutimi
 ```bash
-cd Detyra4-SearchTrees
+cd Faza1/Detyra4-SearchTrees
 dotnet run -c Release -- all                 # të tri pemët
 dotnet run -c Release -- puzzle              # 8-Puzzle me gjendjen default 023146758
 dotnet run -c Release -- puzzle 413026758    # 8-Puzzle me gjendje të çfarëdoshme (0 = vendi bosh)

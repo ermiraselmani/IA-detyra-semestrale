@@ -2,7 +2,7 @@
 
 ## Ekzekutimi
 ```bash
-cd Detyra3-LatinSquare
+cd Faza1/Detyra3-LatinSquare
 dotnet run -c Release -- 5      # hyrja n (default 5)
 ```
 
