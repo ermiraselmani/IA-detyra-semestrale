@@ -1,0 +1,46 @@
+# Killer Sudoku e gjeneruar (seed 1, kafaze me madhësi ≤ 3)
+# 9 rreshta: id-ja e kafazit për çdo qelizë; pastaj: id shuma
+abcddefgh
+abcdiefjh
+kkllimfjh
+nnolmmpjq
+rrsttuppq
+vvswwuxxy
+vzzwAuxBy
+CzDDAEEBB
+CFGDHHIII
+a 16
+b 5
+c 12
+d 16
+e 14
+f 7
+g 3
+h 19
+i 10
+j 18
+k 11
+l 6
+m 14
+n 17
+o 6
+p 22
+q 8
+r 5
+s 8
+t 8
+u 8
+v 12
+w 18
+x 17
+y 13
+z 20
+A 13
+B 8
+C 10
+D 15
+E 15
+F 1
+G 9
+H 7
+I 14
